@@ -30,6 +30,7 @@
             </nav>
             <h1 class="Heading"><a style="color: inherit;" href="../model/homepage.php">WhaF</a></h1>
             <ul class="NavList">
+
 <?php
 	session_start();
 	if (($_SESSION['prenume'])){
@@ -40,6 +41,13 @@
                 <li id='regb' class='ListItem'>
                     <a href='../index.php?m=delogheaza' class='Button Register MainButton'>Delogheaza</a>
                 </li>
+		";
+	}
+	else{
+		echo "
+			<li id='regb' class='ListItem'>
+				<a href='../index.php?m=inregistreaza-te' class='Button Register MainButton'>Inregistreaza-te</a>
+			</li>
 		";
 	}
 ?>
