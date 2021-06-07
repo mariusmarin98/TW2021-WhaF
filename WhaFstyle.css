@@ -6,13 +6,13 @@ html {
 }
 
 body {
-    background-color: #c7ba81;
+    background-color: rgb(29, 27, 31);
     margin: 0;
     min-height: 100%;
     font-family: Arial, sans-serif;
     font-size: 14px;
     line-height: 20px;
-    color: #333;
+    color: rgb(228, 221, 194);
     box-sizing: border-box;
     display: block
 }
@@ -55,7 +55,7 @@ body {
 .descriere_inputs{
 	margin-top: 0px;
     font-family: 'Alio text', sans-serif;
-    color: #867f61;
+    color: rgb(228, 221, 194);
     font-size:16px;
 
 }
@@ -74,7 +74,7 @@ body {
     -webkit-box-align: center;
     align-items: center;
     background-color: transparent;
-    background-image: linear-gradient(0deg,#9e7d21,#dfbd29);
+    background-image: linear-gradient(0deg,#170429,#361753);
 }
 
 .Container {
@@ -123,7 +123,7 @@ body {
     -webkit-box-flex: 0;
     flex: 0 0 auto;
     font-family: 'Alio text', sans-serif;
-    color: #caba8e;
+    color: rgb(228, 221, 194);
     font-size: 66px;
     font-weight: 400;
     letter-spacing: 7px;
@@ -161,7 +161,7 @@ ul {
     margin-left: 0px;
     padding: 4px 0px 2px;
     font-family: 'Alio text', sans-serif;
-    color: #cab375;
+    color: rgb(240, 233, 204);
     font-size: 15px;
     font-weight: 600;
     letter-spacing: 1px;
@@ -170,6 +170,7 @@ ul {
 
 a{
     background-color: transparent;
+    text-decoration: none;
 }
 
 a:-weblit-any-link{
@@ -212,9 +213,9 @@ li {
     border-style: none;
     border-color: transparent;
     border-radius: 10px;
-    background-color: #b39b6d;
+    background-color: rgb(6, 6, 7);
     font-family: 'Alio text',sans-serif;
-    color: #65573a;
+    color: rgb(228, 221, 194);
     font-size: 15px;
     font-weight: 600;
     text-align: center;
@@ -233,9 +234,9 @@ li {
     padding: 10px 9px 6px 12px;
     border-style: solid;
     border-width: 2px;
-    border-color: #9e7d21;
+    border-color: rgb(58, 41, 75);
     background-color: transparent;
-    color: #beb188;
+    color: rgb(228, 221, 194);
 }
 
 #logout {
@@ -249,9 +250,9 @@ li {
     padding: 10px 9px 6px 12px;
     border-style: solid;
     border-width: 2px;
-    border-color: #9e7d21;
+    border-color: rgb(58, 41, 75);
     background-color: transparent;
-    color: #beb188;
+    color: rgb(228, 221, 194);
 }
 
 .MyFeedContainer{
@@ -261,13 +262,14 @@ li {
 .Heading2 {
     margin-top: 0px;
     font-family: 'Alio text', sans-serif;
-    color: #867f61;
+    color: rgb(228, 221, 194);
     font-size:23px;
 }
 
 h1, h2, h3, h4, h5, h6{
     font-weight: bold;
     margin-bottom: 10px;
+    text-decoration: none;
 }
 
 h2 {
@@ -348,7 +350,7 @@ p{
     margin-inline-end: 0px;
     font-size: 14px;
     line-height: 20px;
-    color: #333;
+    color: rgb(228, 221, 194);
     -webkit-box-direction: normal;
     font-family: 'Ruberoid', sans-serif;
     font-weight: 400;
@@ -371,7 +373,7 @@ p{
     font-family: Arial,sans-serif;
     font-size: 14px;
     line-height: 20px;
-    color: #333;
+    color: rgb(228, 221, 194);
     -webkit-box-direction: normal;
     box-sizing: border-box;
     width: 100%;
@@ -464,7 +466,7 @@ form.example button {
   float: left;
   width: 7%;
   padding: 10px;
-  background: #c7ba81;
+  background: rgb(29, 27, 31);;
   color: white;
   font-size: 17px;
   border: 1px solid grey;
@@ -473,7 +475,7 @@ form.example button {
 }
 
 form.example button:hover {
-  background: #c7ba81;
+  background: rgb(29, 27, 31);;
 }
 
 form.example::after {
