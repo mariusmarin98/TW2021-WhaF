@@ -9,9 +9,13 @@
         header( "Location: model/signup.php");
         break;
     case "homepage":
-		if($_GET['prenume']){
-			$prenume = $_GET['prenume'];
-			header("Location: model/homepage.php?prenume=".$prenume."");
+		session_start();
+		if($_GET['sort']){
+			header("Location: model/homepage.php?sort=".$_GET['sort']."");
+			break;
+		}
+		if($_SESSION['prenume']){
+			header("Location: model/homepage.php?prenume=". $_SESSION['prenume']."");
 			break;
 		}
 		if($_GET['add']){
@@ -20,13 +24,14 @@
 			break;
 		}
 		header("Location: model/homepage.php");
-        break;
+		break;
     case "date_login":
         header("Location: model/date_login.php?");
 		break;
 	case "delogheaza":
 		session_unset();
 		session_destroy();
+		unset($_SESSION['prenume']);
 		header("Location: model/login.php?");
         break;
 	case "retete":

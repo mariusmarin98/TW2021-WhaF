@@ -48,13 +48,6 @@
 			header("Location: login.php?err=".$err_login."");
 		}
 	}
-	//else{
-	//	$err_login = "Incercare frauduloasa de logare!";
-	//	header("Location: login.php?err=".$err_login."");
-	//}
-
-		
-	//die("stop");
 
 	require '../views/login.php';
 ?>
