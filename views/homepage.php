@@ -157,7 +157,7 @@
 						}else{
 							
 							
-							$select = mysqli_query($conn, "SELECT * FROM `retete`") or exit(mysqli_error($conn));
+							$select = mysqli_query($conn, "SELECT * FROM `retete` ORDER BY id DESC") or exit(mysqli_error($conn));
 							$n = mysqli_num_rows($select);
 							if($n>0)
 							echo "<h2 class=Heading2>Noutati</h2>";							
