@@ -46,13 +46,14 @@
 		";
 	}
 ?>
-            </ul>
+        </ul>
         </header>
         <section class="MyFeedContainer Container">
 <?php
 			if($_GET["prenume"]){
 			$prenume = $_GET['prenume'];
-			echo "<div id='good'>
+			echo "
+				<div id='good'>
 					<p style='vertical-align: middle; display: inline-block;'>Bine ai venit, ".$prenume."</p>
 				</div>";
 			}
@@ -65,7 +66,7 @@
 				
 
 ?>
-            <h2 class=Heading2>Noutati</h2>
+            
 <?php
 			if($_POST['cauta_ing']){
 				$search = $_POST['cauta_ing'];
@@ -80,98 +81,112 @@
 						$id = $row["id"];
 						mysqli_query($conn,"UPDATE retete SET popularitate = popularitate + 1 WHERE id = '".$id."'");
 						echo "
-			<div style='margin-left: 5%;'>
-				<div style=' float:left; width: 25%;'>
-					<img style='border-radius: 15px;' src='../images/".$row['nume_poza']."'>
-				</div>
-				<div style='float:left; margin-left: 10px;'>
-					<h2 style=''>".$row['titlu']."</h2>
-                    <p style='width: 800px; word-wrap: break-word;'>Ingrediente: ".$row['ingrediente']."</p>
-					<br>
-					<p style='width: 800px; word-wrap: break-word;'>Mod de preparare: ".$row['pasi_preparare']."</p>
-				</div>
-				<br><br>
-				<div style='float:right; margin-right: 3%;'>
-					<strong>Dificultate:</strong>
-					<br><br>
-					<p>".$row['dificultate']."</p>
-					<br><br><br><br>
-					<strong>Durata de preparare:</strong>
-					<br><br>
-					<p>".$row['durata']." de min</p>
-				</div>
-			</div>
-			<br style='clear:both;'>";
-					
-					}
-				}else
-					echo "Nu exista rezultate!";
-			}else if($_GET["sort"]){
-	
-				$select = mysqli_query($conn, "SELECT * FROM `retete` ORDER BY popularitate DESC") or exit(mysqli_error($conn));
-				$n = mysqli_num_rows($select);
-
-				if($n>0)
-					while($row = mysqli_fetch_assoc($select))
-						echo "
-			<div style='margin-left: 5%;'>
-				<div style=' float:left; width: 25%;'>
-					<img style='border-radius: 15px;' src='../images/".$row['nume_poza']."'>
-				</div>
-				<div style='float:left; margin-left: 10px;'>
-					<h2 style=''>".$row['titlu']."</h2>
-                    <p style='width: 800px; word-wrap: break-word;'>Ingrediente: ".$row['ingrediente']."</p>
-					<br>
-					<p style='width: 800px; word-wrap: break-word;'>Mod de preparare: ".$row['pasi_preparare']."</p>
-				</div>
-				<br><br>
-				<div style='float:right; margin-right: 3%;'>
-					<strong>Dificultate:</strong>
-					<br><br>
-					<p>".$row['dificultate']."</p>
-					<br><br><br><br>
-					<strong>Durata de preparare:</strong>
-					<br><br>
-					<p>".$row['durata']." de min</p>
-				</div>
-			</div>
-			<br style='clear:both;'>";
-
+						<h2 class=Heading2>Rezultatele cautarii</h2>
+						<div style='margin-left: 5%;'>
+							<div style=' float:left; width: 25%;'>
+								<img style='border-radius: 15px;' src='../images/".$row['nume_poza']."'>
+							</div>
+							<div style='float:left; margin-left: 10px;'>
+								<h2 style=''>".$row['titlu']."</h2>
+								<p style='width: 800px; word-wrap: break-word;'><b>Ingrediente:</b> ".$row['ingrediente']."</p>
+								<br>
+								<p style='width: 800px; word-wrap: break-word;'><b>Mod de preparare:</b>".$row['pasi_preparare']."</p>
+							</div>
+							<br><br>
+							<div style='float:right; margin-right: 3%;'>
+								<strong>Dificultate:</strong>
+								<br><br>
+								<p>".$row['dificultate']."</p>
+								<br><br><br><br>
+								<strong>Durata de preparare:</strong>
+								<br><br>
+								<p>".$row['durata']." de min</p>
+							</div>
+						</div>
+						<br style='clear:both;'><br /><br />";
+								
+								}
+							}else
+							echo "Nu exista rezultate!";
+					}else if($_GET["sort"]){
 			
-			}else{
-				
-				
-			$select = mysqli_query($conn, "SELECT * FROM `retete`") or exit(mysqli_error($conn));
-			$n = mysqli_num_rows($select);
-			if($n>0)
-			while($row = mysqli_fetch_assoc($select))
-			
-				echo "
-			<div style='margin-left: 5%;'>
-				<div style=' float:left; width: 25%;'>
-					<img style='border-radius: 15px;' src='../images/".$row['nume_poza']."'>
-				</div>
-				<div style='float:left; margin-left: 10px;'>
-					<h2 style=''>".$row['titlu']."</h2>
-                    <p style='width: 800px; word-wrap: break-word;'>Ingrediente: ".$row['ingrediente']."</p>
-					<br>
-					<p style='width: 800px; word-wrap: break-word;'>Mod de preparare: ".$row['pasi_preparare']."</p>
-				</div>
-				<br><br>
-				<div style='float:right; margin-right: 3%;'>
-					<strong>Dificultate:</strong>
-					<br><br>
-					<p>".$row['dificultate']."</p>
-					<br><br><br><br>
-					<strong>Durata de preparare:</strong>
-					<br><br>
-					<p>".$row['durata']." de min</p>
-				</div>
-			</div>
-			<br style='clear:both;'>";
+						$select = mysqli_query($conn, "SELECT * FROM `retete` ORDER BY popularitate DESC") or exit(mysqli_error($conn));
+						$n = mysqli_num_rows($select);
+						echo "<h2 class=Heading2>Retete populare</h2> 
+								<div class='form-group'>
+								<button onclick='Export()' class='export-button'>Export CSV File</button>
+								</div>
+								<script>
+									function Export()
+									{
+										var conf = confirm('Exportati clasamentul in format csv?');
+										if(conf == true)
+										{
+											window.open('./../export.php', '_blank');
+										}
+									}
+								</script>
+								<br />";
+						if($n>0)
+							while($row = mysqli_fetch_assoc($select))
+								echo "
+								<div style='margin-left: 5%;'>
+									<div style=' float:left; width: 25%;'>
+										<img style='border-radius: 15px;' src='../images/".$row['nume_poza']."'>
+									</div>
+									<div style='float:left; margin-left: 10px;'>
+										<h2 style=''>".$row['titlu']."</h2>
+										<p style='width: 800px; word-wrap: break-word;'><b>Ingrediente:</b> ".$row['ingrediente']."</p>
+										<br>
+										<p style='width: 800px; word-wrap: break-word;'><b>Mod de preparare:</b>".$row['pasi_preparare']."</p>
+									</div>
+									<br><br>
+									<div style='float:right; margin-right: 3%;'>
+										<strong>Dificultate:</strong>
+										<br><br>
+										<p>".$row['dificultate']."</p>
+										<br><br><br><br>
+										<strong>Durata de preparare:</strong>
+										<br><br>
+										<p>".$row['durata']." de min</p>
+									</div>
+								</div>
+								<br style='clear:both;'><br /><br />";
 
-
-			}
+						
+						}else{
+							
+							
+							$select = mysqli_query($conn, "SELECT * FROM `retete`") or exit(mysqli_error($conn));
+							$n = mysqli_num_rows($select);
+							if($n>0)
+							echo "<h2 class=Heading2>Noutati</h2>";							
+							while($row = mysqli_fetch_assoc($select))
+							
+								echo "
+								<div style='margin-left: 5%;'>
+									<div style=' float:left; width: 25%;'>
+										<img style='border-radius: 15px;' src='../images/".$row['nume_poza']."'>
+									</div>
+									<div style='float:left; margin-left: 10px;'>
+										<h2 style=''>".$row['titlu']."</h2>
+										<p style='width: 800px; word-wrap: break-word;'><b>Ingrediente:</b> ".$row['ingrediente']."</p>
+										<br>
+										<p style='width: 800px; word-wrap: break-word;'><b>Mod de preparare:</b> ".$row['pasi_preparare']."</p>
+									</div>
+									<br><br>
+									<div style='float:right; margin-right: 3%;'>
+										<strong>Dificultate:</strong>
+										<br><br>
+										<p>".$row['dificultate']."</p>
+										<br><br><br><br>
+										<strong>Durata de preparare:</strong>
+										<br><br>
+										<p>".$row['durata']." de min</p>
+									</div>
+								</div>
+								<br style='clear:both;'><br /><br />";
+						}
 			
 
 ?>
