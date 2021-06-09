@@ -75,13 +75,12 @@
 				
 
 				$n = mysqli_num_rows($select);
-				
+				echo "<h2 class=Heading2>Rezultatele cautarii</h2>";	
 				if($n>0){
 					while($row = mysqli_fetch_assoc($select)){
 						$id = $row["id"];
 						mysqli_query($conn,"UPDATE retete SET popularitate = popularitate + 1 WHERE id = '".$id."'");
 						echo "
-						<h2 class=Heading2>Rezultatele cautarii</h2>
 						<div style='margin-left: 5%;'>
 							<div style=' float:left; width: 25%;'>
 								<img style='border-radius: 15px;' src='../images/".$row['nume_poza']."'>
