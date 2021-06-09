@@ -475,7 +475,7 @@ form.example button {
 }
 
 form.example button:hover {
-  background: rgb(29, 27, 31);;
+  background: rgb(29, 27, 31);
 }
 
 form.example::after {
@@ -483,3 +483,17 @@ form.example::after {
   clear: both;
   display: table; 
 }
+
+.export-button{
+    padding: 10px 9px 6px 12px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: none;
+    background-color: rgb(13, 12, 14);
+    color: rgb(228, 221, 194);
+}
+
+.export-button:active {
+    background-color: rgb(42, 41, 44);
+    transform: translateY(4px);
+  }
