@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WhaF</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="scholarly.css">
+  </head>
+  <body>
+    <article resource="#" typeof="schema:ScholarlyArticle">
+      <header>
+        <h1 property="schema:name">What the Food</h1>
+        <p role="doc-subtitle" property="schema:alternateName"></p>
+      </header>
+      <meta property="schema:accessibilityFeature" content="alternativeText" />
+      <meta property="schema:accessibilityFeature" content="MathML" />
+      <meta property="schema:accessibilityHazard" content="noFlashingHazard" />
+
+      <section typeof="sa:AuthorsList">
+        <h3>Autori</h3>
+        <ul>
+          <li typeof="sa:ContributorRole" property="schema:author">
+            <meta property="schema:familyName" content="Marius Marin" />
+            <span property="schema:name">Marius Marin</span>
+          </li>
+        </ul>
+        <ul>
+          <li typeof="sa:ContributorRole" property="schema:author">
+            <span typeof="schema:Person"></span>
+            <meta property="schema:familyName" content="Andy Momita" />
+            <span property="schema:name">Andy Momita</span>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Descrierea proiectului</h2>
+        <p>
+            What the Food este o platforma pentru pasionatii de gatit, unde utilizatorii pot cauta diverse retete culinare in functie de ingredientele pe care le au sau gradul de dificultate. De asemenea, utilizatorii pot adauga la randul lor retete proprii. 
+        </p>
+      </section>
+      <section>
+        <h3>Tehnologii folosite:</h3>
+        <ul>
+          <li>HTML</li>
+          <li>CSS/SCSS</li>
+          <li>php</li>
+          <li>MySQL</li>
+        </ul>
+      </section>
+      <section>
+        <h3>Scenarii de utilizare</h3>
+        Ca utilizator fara cont: <br><br>
+        ⦁ Posibilitatea de a vizualiza retetele curente <br>
+        ⦁	Posibilitatea utilizatorului de cauta retete dupa ingrediente sau dificultate <br>
+        ⦁	Posibilitatea utilizatorului de a se inregistra pe platforma <br>
+        ⦁	Posibilitatea utilizatorului de a vedea cele mai populare retete <br>
+        <br>
+        Ca utilizator autentificat, in plus: <br><br>
+        ⦁ Posibilitatea utilizatorului de a adauga o noua reteta.
+
+      </section>
+      <section>
+        <h3>Baza de date - MySQL</h3>
+        <section>
+          <h4>Tabele</h4>
+          <ul>
+            Tabela utilizatori:
+            <br><img src="utilizatori.png" alt="tabela">
+          </ul>
+          <ul>
+            Tabela retete:
+           <br><img src="retete.png" alt="tabela">
+          </ul>
+        </section>
+      </section>
+      <section>
+        <h2>Arhitectura - MVC:</h2>
+        <h3>Model:</h3>
+        • date_login.php <br>
+        • homepage.php <br>
+        • retete.php <br>
+        • signup.php
+        <br>
+        <h3>View:</h3>
+        • homepage.php <br>
+        • login.php <br>
+        • retete.php <br>
+        • signup.php <br>
+        <br>
+        <h3>Controller:</h3>
+        • index.php <br>
+        <br>
+       
+      </section>
+      <section>
+        <h3>References:</h3>
+        <a href="./ghid.html"> Ghid de utilizare </a>
+        <p>
+          Project GitHub page:
+          <a href="https://github.com/mariusmarin98/TW2021-WhaF">
+            https://github.com/mariusmarin98/TW2021-WhaF 
+            </a>
+        </p>
+      </section>
+    </article>
+  </body>
+</html>
