@@ -110,7 +110,7 @@
 							echo "Nu exista rezultate!";
 					}else if($_GET["sort"]){
 			
-						$select = mysqli_query($conn, "SELECT * FROM `retete` ORDER BY popularitate DESC") or exit(mysqli_error($conn));
+						$select = mysqli_query($conn, "SELECT * FROM `retete` ORDER BY popularitate DESC LIMIT 10") or exit(mysqli_error($conn));
 						$n = mysqli_num_rows($select);
 						echo "<h2 class=Heading2>Retete populare</h2> 
 								<div class='form-group'>
@@ -157,7 +157,7 @@
 						}else{
 							
 							
-							$select = mysqli_query($conn, "SELECT * FROM `retete` ORDER BY id DESC") or exit(mysqli_error($conn));
+							$select = mysqli_query($conn, "SELECT * FROM `retete` ORDER BY id DESC LIMIT 7") or exit(mysqli_error($conn));
 							$n = mysqli_num_rows($select);
 							if($n>0)
 							echo "<h2 class=Heading2>Noutati</h2>";							
