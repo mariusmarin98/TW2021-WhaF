@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<HTML>
+<HTML lang="ro">
     <head>
         <meta charset="utf-8">
         <title>What the Food - Adauga reteta</title>
@@ -18,6 +18,7 @@
 					<textarea rows=6 class="inputs" name="preparare" placeholder="Specifica modul de preparare:" minlength="50" required></textarea><br><br>
 					<label class="descriere_inputs">Dificultate</label><br>
 					<select class="inputs2" name="dificultate" required>
+						<option value="">Alege dificultatea</option>
 						<option value="usor">usor</option>
 						<option value="mediu">mediu</option>
 						<option value="dificil">dificil</option>
@@ -29,7 +30,7 @@
 				</form> 
 			<br><br><br>
 			<p>Te-ai razgandit?</p> <!-- paragraf - este un scris de dim mici -->
-			<form action="../model/homepage.php" method=""> 
+			<form action="../model/homepage.php"> 
 				<input class="Button" type="submit" value="Renuntare">
 			</form>
 		</div>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<HTML>
+<HTML lang="ro">
     <head>
         <meta charset="utf-8">
         <title>What the Food - Logare</title>

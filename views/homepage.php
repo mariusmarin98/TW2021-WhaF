@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<HTML>
+<HTML lang="ro">
     <head>
         <meta charset="utf-8">
         <title>WhaF</title>
@@ -31,16 +31,16 @@
 	session_start();
 	if ($_SESSION["prenume"]){
 		echo "
-				<li id='regb' class='ListItem'>
+				<li class='ListItem'>
                     <a href='../index.php?m=retete' class='Button Register MainButton'>Adauga reteta</a>
                 </li>
-                <li id='regb' class='ListItem'>
+                <li class='ListItem'>
                     <a href='../index.php?m=delogheaza' class='Button Register MainButton'>Delogheaza</a>
                 </li>
 		";
 	}else{
 		echo "
-				<li id='regb' class='ListItem'>
+				<li class='ListItem'>
                     <a href='../index.php?m=signup' class='Button Register MainButton'>Deveniti membru</a>
                 </li>
 		";
@@ -83,7 +83,7 @@
 						echo "
 						<div style='margin-left: 5%;'>
 							<div style=' float:left; width: 25%;'>
-								<img style='border-radius: 15px;' src='../images/".$row['nume_poza']."'>
+								<img alt = 'poza mancare' style='border-radius: 15px;' src='../images/".$row['nume_poza']."'>
 							</div>
 							<div style='float:left; margin-left: 10px;'>
 								<h2 style=''>".$row['titlu']."</h2>
@@ -131,7 +131,7 @@
 								echo "
 								<div style='margin-left: 5%;'>
 									<div style=' float:left; width: 25%;'>
-										<img style='border-radius: 15px;' src='../images/".$row['nume_poza']."'>
+										<img alt = 'poza mancare' style='border-radius: 15px;' src='../images/".$row['nume_poza']."'>
 									</div>
 									<div style='float:left; margin-left: 10px;'>
 										<h2 style=''>".$row['titlu']."</h2>
@@ -165,7 +165,7 @@
 								echo "
 								<div style='margin-left: 5%;'>
 									<div style=' float:left; width: 25%;'>
-										<img style='border-radius: 15px;' src='../images/".$row['nume_poza']."'>
+										<img alt = 'poza mancare' style='border-radius: 15px;' src='../images/".$row['nume_poza']."'>
 									</div>
 									<div style='float:left; margin-left: 10px;'>
 										<h2 style=''>".$row['titlu']."</h2>
