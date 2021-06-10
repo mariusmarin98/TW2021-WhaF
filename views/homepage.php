@@ -71,8 +71,35 @@
 			if($_POST['cauta_ing']){
 				$search = $_POST['cauta_ing'];
 				
-				$select = mysqli_query($conn, "SELECT * FROM `retete` WHERE ingrediente LIKE '%$search%' OR dificultate LIKE '%$search%' OR durata LIKE '%$search%'") or exit(mysqli_error($conn));
+				if(is_numeric($search)){
+					$select = mysqli_query($conn, "SELECT * FROM `retete` WHERE durata LIKE '$search'") or exit(mysqli_error($conn));
+				}else {	
+					if (strpos($search,"-")){
+						$array = explode("-",$search);
+						$select = mysqli_query($conn, "SELECT * FROM `retete` WHERE durata >= '$array[0]' AND durata <= '$array[1]'  ") or exit(mysqli_error($conn));
+					}else {
+						if (strcmp($search,"usor") === 0 || strcmp($search,"mediu") === 0 || strcmp($search,"dificil") === 0) {
+							$select = mysqli_query($conn, "SELECT * FROM `retete` WHERE dificultate LIKE '$search'") or exit(mysqli_error($conn));
+						}
+						else{
+							$array = explode(',', $search);
+							
+							for ($i = 0; $i < count($array); $i++ ){
+								$new .= " LIKE '%{$array[$i]}%'";
+								if ( $i < count($array) -1 ){
+									$new .= " OR ingrediente";
+								}
+							}
+
+							$select = mysqli_query($conn, "SELECT * FROM `retete` WHERE ingrediente $new") or exit(mysqli_error($conn));
+							
+							}
+						}
+					}
 				
+			
+
+
 
 				$n = mysqli_num_rows($select);
 				echo "<h2 class=Heading2>Rezultatele cautarii</h2>";	
