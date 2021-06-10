@@ -16,8 +16,8 @@
 		}
 ?>
 
-			<h2 style="margin:10px 0 10px 0;" class="Heading2">Creati-va un cont</h2>     <!-- Text de dimensiunea h2    Un text in html poate avea dimensiunea de la h1 la h7. h1 >h7 -->
-				<form action="../model/date_login.php" method="POST">    <!-- Crearea unui formular -->
+			<h2 style="margin:10px 0 10px 0;" class="Heading2">Creati-va un cont</h2> 
+				<form action="../model/date_login.php" method="POST">    
 					<label class="descriere_inputs">Nume</label><br>
 					<input type="text" class="inputs" name="nume" placeholder="Introdu nume:" minlength="3" maxlength="25" required><br> 
 					<label class="descriere_inputs">Prenume</label><br>

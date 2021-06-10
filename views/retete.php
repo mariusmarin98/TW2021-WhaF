@@ -8,10 +8,10 @@
     <body>
 		<div class="Container2" style="text-align: center;">
 
-			<h1 style="margin:50px 0 50px 0;" class="Heading2">Adaugare reteta</h1>     <!-- Text de dimensiunea h2    Un text in html poate avea dimensiunea de la h1 la h7. h1 >h7 -->
-				<form action="../model/retete.php" method="POST" enctype="multipart/form-data">    <!-- Crearea unui formular -->
+			<h1 style="margin:50px 0 50px 0;" class="Heading2">Adaugare reteta</h1> 
+				<form action="../model/retete.php" method="POST" enctype="multipart/form-data">    
 					<label class="descriere_inputs">Titlul retetei</label><br>
-					<input type="text" class="inputs" name="titlu" placeholder="Introdu titlul retetei" minlength="5" maxlength="100" required><br> <!-- Un camp de completat - input -->
+					<input type="text" class="inputs" name="titlu" placeholder="Introdu titlul retetei" minlength="5" maxlength="100" required><br> 
 					<label class="descriere_inputs">Ingrediente</label><br>
 					<textarea rows=6 class="inputs" name="ingrediente" placeholder="Introdu ingredientele:" minlength="50" required></textarea><br><br>
 					<label class="descriere_inputs">Mod de preparare</label><br>
@@ -26,10 +26,10 @@
 					<label class="descriere_inputs">Durata (minute)</label><br>
 					<input type="number" class="inputs" name="durata" min="10" step=5 max="180" required>
 					<input type="file" name="poza">
-					<input style="margin-top:25px;" type="submit" class="Button" value="Adauga reteta"> <!--Orice formular trebuie sa se termine cu un submit. Orice input are un tip text/ submit-->
+					<input style="margin-top:25px;" type="submit" class="Button" value="Adauga reteta"> 
 				</form> 
 			<br><br><br>
-			<p>Te-ai razgandit?</p> <!-- paragraf - este un scris de dim mici -->
+			<p>Te-ai razgandit?</p> 
 			<form action="../model/homepage.php"> 
 				<input class="Button" type="submit" value="Renuntare">
 			</form>

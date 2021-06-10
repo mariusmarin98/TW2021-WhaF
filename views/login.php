@@ -21,16 +21,16 @@
 				</div>";
 		}
 ?>
-			<h1 style="margin:50px 0 50px 0;" class="Heading2">Pagina de logare</h1>     <!-- Text de dimensiunea h2    Un text in html poate avea dimensiunea de la h1 la h7. h1 >h7 -->
-				<form action="../model/login.php" method="POST">    <!-- Crearea unui formular -->
+			<h1 style="margin:50px 0 50px 0;" class="Heading2">Pagina de logare</h1>    
+				<form action="../model/login.php" method="POST">    
 					<label class="descriere_inputs">E-mail:</label><br>
-					<input type="text" class="inputs" name="email_login" placeholder="Introdu email:"><br> <!-- Un camp de completat - input -->
+					<input type="text" class="inputs" name="email_login" placeholder="Introdu email:"><br> 
 					<label class="descriere_inputs">Parola:</label><br>
 					<input type="password" class="inputs" name="parola_login" placeholder="Introdu parola:"><br><br>
-					<input style="margin-top:25px;" type="submit" class="Button" value="Intra in cont"> <!--Orice formular trebuie sa se termine cu un submit. Orice input are un tip text/ submit-->
+					<input style="margin-top:25px;" type="submit" class="Button" value="Intra in cont"> 
 				</form> 
 			<br><br><br>
-			<p class="Heading2">Nu aveti cont? Creati-va unul.</p> <!-- paragraf - este un scris de dim mici -->
+			<p class="Heading2">Nu aveti cont? Creati-va unul.</p> 
 			<form action="../index.php?m=signup" method="POST"> 
 				<input class="Button" type="submit" value="Creaza cont">
 			</form>
