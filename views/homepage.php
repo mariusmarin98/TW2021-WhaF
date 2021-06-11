@@ -71,28 +71,73 @@
 			if($_POST['cauta_ing']){
 				$search = $_POST['cauta_ing'];
 				
-				if(is_numeric($search)){
-					$select = mysqli_query($conn, "SELECT * FROM `retete` WHERE durata LIKE '$search'") or exit(mysqli_error($conn));
-				}else {	
-					if (strpos($search,"-")){
-						$array = explode("-",$search);
-						$select = mysqli_query($conn, "SELECT * FROM `retete` WHERE durata >= '$array[0]' AND durata <= '$array[1]'  ") or exit(mysqli_error($conn));
-					}else {
-						if (strcmp($search,"usor") === 0 || strcmp($search,"mediu") === 0 || strcmp($search,"dificil") === 0) {
-							$select = mysqli_query($conn, "SELECT * FROM `retete` WHERE dificultate LIKE '$search'") or exit(mysqli_error($conn));
-						}
-						else{
-							$array = explode(',', $search);
-							
-							for ($i = 0; $i < count($array); $i++ ){
-								$new .= " LIKE '%{$array[$i]}%'";
-								if ( $i < count($array) -1 ){
-									$new .= " OR ingrediente";
-								}
+				if(strpos($search,";")){
+					
+					$comp_search = explode(";",$search);
+					
+					for ($i = 0; $i < count($comp_search); $i++){
+					
+						if(is_numeric($comp_search[$i])){
+							$new .= " durata LIKE '$comp_search[$i]'";
+							if ( $i < count($comp_search) -1 ){
+								$new .= " AND";
 							}
+					
+						} else if (strcmp($comp_search[$i],"usor") === 0 || strcmp($comp_search[$i],"mediu") === 0 || strcmp($comp_search[$i],"dificil") === 0){
+							$new .= " dificultate LIKE '$comp_search[$i]'";
+							if ( $i < count($comp_search) -1 ){
+								$new .= " AND";
+							}
+					
+						} else if (strpos($comp_search[$i],"-")) {
+							$array = explode("-",$comp_search[$i]);
+							$new .= " durata  >= '$array[0]' AND durata <= '$array[1]'";
+							if ( $i < count($comp_search) -1 ){
+								$new .= " AND";
+							}
+					
+						} else {
+							$array = explode(",", $comp_search[$i]);
+							$new .= "(";
+							for ($j = 0; $j < count($array); $j++ ){
+								$new .= " ingrediente LIKE '%{$array[$j]}%'";
+								if ( $j < count($array) -1 ){
+									$new .= " OR";
+								}
 
-							$select = mysqli_query($conn, "SELECT * FROM `retete` WHERE ingrediente $new") or exit(mysqli_error($conn));
-							
+							}
+							$new .= " )";
+							if ( $i < count($comp_search) -1 ){
+								$new .= " AND";
+							}
+						}
+					}
+					$select = mysqli_query($conn, "SELECT * FROM `retete` WHERE $new") or exit(mysqli_error($conn));
+
+				} else {
+					if(is_numeric($search)){
+						$select = mysqli_query($conn, "SELECT * FROM `retete` WHERE durata LIKE '$search'") or exit(mysqli_error($conn));
+					}else {	
+						if (strpos($search,"-")){
+							$array = explode("-",$search);
+							$select = mysqli_query($conn, "SELECT * FROM `retete` WHERE durata >= '$array[0]' AND durata <= '$array[1]'  ") or exit(mysqli_error($conn));
+						}else {
+							if (strcmp($search,"usor") === 0 || strcmp($search,"mediu") === 0 || strcmp($search,"dificil") === 0) {
+								$select = mysqli_query($conn, "SELECT * FROM `retete` WHERE dificultate LIKE '$search'") or exit(mysqli_error($conn));
+							}
+							else{
+								$array = explode(',', $search);
+								
+								for ($i = 0; $i < count($array); $i++ ){
+									$new .= " LIKE '%{$array[$i]}%'";
+									if ( $i < count($array) -1 ){
+										$new .= " OR ingrediente";
+									}
+								}
+
+								$select = mysqli_query($conn, "SELECT * FROM `retete` WHERE ingrediente $new") or exit(mysqli_error($conn));
+								
+								}
 							}
 						}
 					}
