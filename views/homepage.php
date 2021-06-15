@@ -66,16 +66,19 @@
         </header>
         <section >
 		<div class= 'container'>
+<?php
+
+					if($_GET["prenume"]){
+						$prenume = $_GET['prenume'];
+						echo "
+							<div class ='welcome' id = 'good'>
+								<p style='vertical-align: middle; display: inline-block;'>Bine ai venit, ".$prenume."</p>
+							</div>";
+						}
+?>
 			<div class = 'search-result'>
 			
 <?php
-			if($_GET["prenume"]){
-			$prenume = $_GET['prenume'];
-			echo "
-				<div id='good'>
-					<p style='vertical-align: middle; display: inline-block;'>Bine ai venit, ".$prenume."</p>
-				</div>";
-			}
 			if($_GET["add"]){
 			$add = $_GET['add'];
 			echo "<div id='good'>
