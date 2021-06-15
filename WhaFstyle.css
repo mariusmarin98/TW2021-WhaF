@@ -17,6 +17,16 @@ body {
     display: block
 }
 
+section {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0;
+}
+
+
 .inputs{
 	width: 100%;
   padding: 12px 20px;
@@ -66,12 +76,8 @@ body {
     z-index: 1;
     display: flex;
     padding: 0px;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
     flex-direction: row;
-    -webkit-box-pack: justify;
     justify-content: space-between;
-    -webkit-box-align: center;
     align-items: center;
     background-color: transparent;
     background-image: linear-gradient(0deg,#170429,#361753);
@@ -101,14 +107,11 @@ body {
 
 .HeadingContainer {
     padding-right: 21px;
-    -webkit-box-ordinal-group: 1;
     order: 0;
-    -webkit-box-flex: 1;
     flex: 1 0 auto;
 }
 
 .Heading{
-    -webkit-box-direction: normal;
     box-sizing: border-box;
     margin: .67em 0;
     line-height: 44px;
@@ -120,7 +123,6 @@ body {
     padding-bottom: 9px;
     align-self: auto;
     order: -1;
-    -webkit-box-flex: 0;
     flex: 0 0 auto;
     font-family: 'Alio text', sans-serif;
     color: rgb(228, 221, 194);
@@ -139,9 +141,7 @@ h1 {
     padding: 0px;
     justify-content: space-around;
     justify-items: stretch;
-    -webkit-box-align: center;
     align-items: center;
-    -webkit-box-flex: 0.17;
     flex: 0.17 0 auto;
     list-style-type:none;
     object-fit: fill
@@ -163,15 +163,13 @@ h1 {
 a{
     background-color: transparent;
     text-decoration: none;
-}
-
-a:-weblit-any-link{
     cursor: pointer;
 }
 
+
 li {
     display: list-item;
-    text-align: -webkit-match-parent;
+    text-align: match-parent;
 }
 
 #logb {
@@ -269,17 +267,9 @@ h2 {
 }
 
 div{
-    display: block;
+    margin-left: 10px;
 }
 
-.Recipe {
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    flex-direction:  row;
-    -webkit-box-pack:  justify;
-    justify-content: space-between;
-}
 
 figure {
     margin: 0;
@@ -292,20 +282,11 @@ figure {
     order: -1;
 }
 
-img {
-    max-width: 100%;
-    vertical-align: middle;
-    display: inline-block;
-    border: 0;
-}
 
 .RichTextBlock {
     display: flex;
     margin-left: 18px;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
     flex-direction: column;
-    -webkit-box-pack: justify;
     justify-content: space-between;
     font-family: 'Ruberoid', sans-serif;
     font-weight: 400;
@@ -327,7 +308,6 @@ p{
     font-size: 14px;
     line-height: 20px;
     color: rgb(228, 221, 194);
-    -webkit-box-direction: normal;
     font-family: 'Ruberoid', sans-serif;
     font-weight: 400;
     box-sizing: border-box;
@@ -350,7 +330,6 @@ p{
     font-size: 14px;
     line-height: 20px;
     color: rgb(228, 221, 194);
-    -webkit-box-direction: normal;
     box-sizing: border-box;
     width: 100%;
     height: auto;
@@ -371,7 +350,6 @@ form{
 }
 
 .Search{
-    -webkit-box-direction: normal;
     box-sizing: border-box;
     font: inherit;
     margin: 0;
@@ -421,7 +399,9 @@ form{
 }
 
 * {
-  box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 form.example input[type=text] {
@@ -466,4 +446,58 @@ form.example::after {
 .export-button:active {
     background-color: rgb(42, 41, 44);
     transform: translateY(4px);
-  }
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.continer{
+    width: 90%;
+    height: auto;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.search-result{
+    width: 90%;
+    display: grid;
+    grid-gap: 25px;
+    grid-template: auto / repeat(auto-fit, minmax(500px, 1fr));
+}
+
+.item{
+    width: 100%;
+    border-radius: 8px;
+    padding: 15px;
+    overflow: hidden;
+    flex-basis: 33%
+}
+
+.item img{
+    width: 100%;
+    height: 300px;
+    border-radius: 4px;
+}
+
+.item .flex-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-basis: 33%
+}
+
+.item .recipe-title{
+    color: rgb(228, 221, 194);
+    margin: 20px 10px 0 0;
+    font-size: 1.5rem;
+}
+
+.recipe-information{
+    color: rgb(228, 221, 194);
+    display: block;
+    margin-top: 10px;
+    font-size: 12px;
+    line-height: 2rem;
+}
