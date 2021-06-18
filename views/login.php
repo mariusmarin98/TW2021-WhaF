@@ -29,12 +29,19 @@
 					<input type="password" class="inputs" name="parola_login" placeholder="Introdu parola:"><br><br>
 					<input style="margin-top:25px;" type="submit" class="Button" value="Intra in cont"> 
 				</form> 
-			<br><br><br>
+			<br><br>
 			<p class="Heading2">Nu aveti cont? Creati-va unul.</p> 
 			<form action="../index.php?m=signup" method="POST"> 
 				<input class="Button" type="submit" value="Creaza cont">
 			</form>
-			<a class="Heading2" href="../index.php?m=homepage">Continua ca neautentificat</a>
+			<br><br>
+			<form action="../index.php?m=delogheaza" method="POST"> 
+				<input class="Button" type="submit" value="Continua ca neautentificat">
+			</form>
+			<br><br>
+			<form action="../admin_login.php" method="POST"> 
+				<input class="Button" type="submit" value="Administrare">
+			</form>
 		</div>
     </body>
 </HTML>

@@ -7,10 +7,12 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 	<body>
-		<li style="float:right;" class='ListItem'>
-				<a href='../admin_login.php' class='Button Register MainButton'>Delogheaza</a>
-            </li>
+		
+		<div style="float:right;" class='ListItem'>
+				<a href='../index.php' class='Button Register MainButton'>Delogheaza</a>
+		</div>
 		<h1 style="margin:50px 0 50px 0;" class="Heading2">Editare reteta</h1> 
+	
 		<table>
 			<tr>
 			<th>Titlu</th>
@@ -30,7 +32,7 @@
 	$id = $row['id'];
 	echo"
 	<form action='../model/admin.php?id=".$id."' method='POST'>
-	<tr>
+	<tr> 
 		<td><input type='text' name='titlu_nou' value='".$row['titlu']."'/></td>
 		<td><textarea cols=30 rows=4 name='ingrediente_noi'>".$row['ingrediente']."</textarea></td>
 		<td><textarea cols=30 rows=4 name='pasi_preparare_noi'>".$row['pasi_preparare']."</textarea></td>

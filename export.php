@@ -2,7 +2,7 @@
 
 require("./model/db.php");
 
-$query = "SELECT titlu,popularitate FROM retete ORDER BY popularitate DESC LIMIT 10;";
+$query = "SELECT titlu, popularitate FROM retete ORDER BY popularitate DESC LIMIT 10;";
 $result =  mysqli_query($conn, $query);
 if (!$result) {
     exit(mysqli_error($con));
