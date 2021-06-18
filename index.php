@@ -32,7 +32,7 @@
 		session_unset();
 		session_destroy();
 		unset($_SESSION['prenume']);
-		header("Location: model/login.php?");
+		header("Location: model/homepage.php");
         break;
 	case "retete":
 		header("Location: model/retete.php?");
