@@ -93,7 +93,7 @@
 			if($_POST['cauta_ing']){
 				$search = $_POST['cauta_ing'];
 				$valid_search = true;
-				$invalid_chars = "/\\\':[]()+=";
+				$invalid_chars = "/':[]()+=";
 				for($i = 0; $i < strlen($invalid_chars); $i++){
 					if(strpos($search,$invalid_chars[$i])){
 						echo "Cautare invalida";
@@ -102,7 +102,7 @@
 					}
 				}
 
-				if ($valid_Search){
+				if ($valid_search){
 					if(strpos($search,";")){
 						
 						$comp_search = explode(";",$search);
@@ -201,7 +201,8 @@
 									}
 								}else
 								echo "Nu exista rezultate!";
-							}
+						}
+						
 					}else if($_GET["sort"]){
 			
 						$select = mysqli_query($conn, "SELECT * FROM `retete` ORDER BY popularitate DESC LIMIT 10") or exit(mysqli_error($conn));
